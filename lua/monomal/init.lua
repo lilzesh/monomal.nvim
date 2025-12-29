@@ -4,40 +4,23 @@ local M = {}
 
 function M.setup()
     local colors = {
-        dark = "#110f0d",
-        light = "#b9b6ae",
-        auxiliary = "#dd00ff",
+        dark        = "#110f0d",
+        light       = "#b9b6ae",
+        auxiliary   = "#dd00ff",
     }
 
     local groups = {
-        Normal = {
-            fg = colors.light,
-            bg = colors.dark,
-        },
-        Comment = {
-            fg = Util.darken(colors.light, 50) 
-        },
-        Keyword = {
-
-        },
-        String = {
-
-        },
-        Number = {
-        
-        },
-        LineNr = {
-
-        },
-        CursorLine = {
-
-        },
-        StatusLine = {
-
-        },
-        Visual = {
-
-        },
+        Normal          = { fg = colors.light, bg = colors.dark },
+        Comment         = { fg = Util.darken(colors.light, 50) },
+        Keyword         = {},
+        String          = {},
+        Number          = {},
+        LineNr          = {},
+        CursorLine      = {},
+        StatusLine      = {},
+        Visual          = {},
+        ["@variable"]   = { fg = Util.lighten(colors.light, 20) },
+        ["@keyword"]    = { fg = Util.lighten(colors.light, 10) },
     }
 
     for group, opts in pairs(groups) do
